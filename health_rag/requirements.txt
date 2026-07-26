@@ -1,0 +1,28 @@
+# Core (required)
+numpy>=1.24
+scikit-learn>=1.3
+
+# Ingestion from the live PIB URL (falls back to cached copy if missing/offline)
+requests>=2.31
+beautifulsoup4>=4.12
+
+# Loads ANTHROPIC_API_KEY / OPENAI_API_KEY / GEMINI_API_KEY from a .env file
+python-dotenv>=1.0
+
+# Optional: minimal web UI (CLI works without this)
+flask>=3.0
+streamlit>=1.35
+
+# Optional: real semantic embeddings instead of the TF-IDF default
+# pip install sentence-transformers
+# sentence-transformers>=2.2
+
+# Optional: LLM-generated answers instead of the extractive fallback
+# pip install anthropic
+# anthropic>=0.34
+# pip install openai
+# openai>=1.40
+# pip install google-generativeai
+# google-generativeai>=0.8
+google-generativeai>=0.7
+python-dotenv>=1.0

@@ -1,0 +1,4 @@
+{
+  "backend": "tfidf",
+  "n_chunks": 16
+}
