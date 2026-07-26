@@ -14,15 +14,16 @@ flask>=3.0
 streamlit>=1.35
 
 # Optional: real semantic embeddings instead of the TF-IDF default
-# pip install sentence-transformers
-# sentence-transformers>=2.2
+pip install sentence-transformers
+sentence-transformers>=2.2
 
 # Optional: LLM-generated answers instead of the extractive fallback
-# pip install anthropic
-# anthropic>=0.34
-# pip install openai
-# openai>=1.40
-# pip install google-generativeai
-# google-generativeai>=0.8
-google-generativeai>=0.7
-python-dotenv>=1.0
+pip install anthropic
+anthropic>=0.34
+pip install openai
+openai>=1.40
+pip install google-genai   (current SDK; replaces the deprecated google-generativeai package)
+google-genai>=0.5
+pip install groq           (Groq's own native SDK — recommended free option)
+groq>=0.11
+
