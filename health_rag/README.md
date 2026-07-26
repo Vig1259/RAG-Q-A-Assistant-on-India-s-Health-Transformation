@@ -28,10 +28,8 @@ health_rag/
 ├── data/
 │   ├── raw/              # cleaned source text (cached + freshly fetched)
 │   └── index/            # chunks.json, embeddings.npy, embedder.pkl, meta.json
-├── .gitignore            
 ├── run.py                # convenience entry point
 ├── requirements.txt
-├──.env                   # give your api keys
 └── README.md
 ```
 
@@ -99,10 +97,6 @@ On a query, the question is embedded with the *same* fitted embedder, and
      by default, override with `ANTHROPIC_MODEL`)
    - **OpenAI API** if `OPENAI_API_KEY` is set (`gpt-4o-mini` by default,
      override with `OPENAI_MODEL`)
-   - **Groq API** if `GROQ_API_KEY` is set (`llama-3.3-70b-versatile` by default,
-     override with `GROQ_MODEL`)
-   - **Groq API** if `GEMINI_API_KEY` is set (`gemini-2.0-flash` by default,
-     override with `GEMINI_MODEL`)
    - **Extractive fallback** (always available, no key required): ranks
      sentences from the retrieved chunks by lexical overlap with the
      question and returns the top few **verbatim**. This guarantees zero
@@ -137,6 +131,15 @@ streamlit run health_rag/streamlit_app.py   # opens automatically at http://loca
 
 ### Optional: real semantic embeddings + LLM-generated answers
 
+Recommended free option — **Groq** (no credit card, generous free tier):
+```bash
+pip install groq
+export GROQ_API_KEY=gsk_...                     # from https://console.groq.com/keys
+python run.py "How has TB incidence changed in India?"
+```
+
+Or with Anthropic / OpenAI / Gemini (all paid beyond free trial credits, and
+Gemini's free tier has had inconsistent quota provisioning as of mid-2026):
 ```bash
 pip install sentence-transformers anthropic
 export EMBEDDING_BACKEND=sbert
