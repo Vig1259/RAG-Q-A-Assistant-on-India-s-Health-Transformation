@@ -29,6 +29,8 @@ health_rag/
 │   ├── raw/              # cleaned source text (cached + freshly fetched)
 │   └── index/            # chunks.json, embeddings.npy, embedder.pkl, meta.json
 ├── run.py                # convenience entry point
+├── .gitignore
+├── .env
 ├── requirements.txt
 └── README.md
 ```
